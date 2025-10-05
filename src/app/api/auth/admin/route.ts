@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
 }
 
 // 验证管理员权限
-async function handleAdminVerify(data: any) {
+async function handleAdminVerify(data: { userId: string; adminPassword: string }) {
   const { userId, adminPassword } = data;
 
   // 验证输入
@@ -53,7 +53,7 @@ async function handleAdminVerify(data: any) {
 }
 
 // 提升用户为管理员
-async function handleAdminPromote(data: any) {
+async function handleAdminPromote(data: { userId: string; promotedBy: string }) {
   const { userId, promotedBy } = data;
 
   // 验证输入
@@ -78,7 +78,7 @@ async function handleAdminPromote(data: any) {
 }
 
 // 撤销管理员权限
-async function handleAdminDemote(data: any) {
+async function handleAdminDemote(data: { userId: string; demotedBy: string }) {
   const { userId, demotedBy } = data;
 
   // 验证输入

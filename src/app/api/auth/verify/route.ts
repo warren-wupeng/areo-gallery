@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
 }
 
 // 发送验证码
-async function handleSendVerificationCode(data: any) {
+async function handleSendVerificationCode(data: { contact: string; type: string }) {
   const { contact, type } = data;
 
   // 验证输入
@@ -74,7 +74,7 @@ async function handleSendVerificationCode(data: any) {
 }
 
 // 确认验证码
-async function handleConfirmVerificationCode(data: any) {
+async function handleConfirmVerificationCode(data: { contact: string; code: string; type: string }) {
   const { contact, code, type } = data;
 
   // 验证输入

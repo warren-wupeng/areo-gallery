@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
 }
 
 // 获取会话信息
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // TODO: 实现会话检查逻辑
     return NextResponse.json({
@@ -46,7 +46,7 @@ export async function GET(request: NextRequest) {
 }
 
 // 处理登录
-async function handleLogin(data: any) {
+async function handleLogin(data: { contact: string; password: string; remember?: boolean }) {
   const { contact, password, remember } = data;
 
   // 验证输入
@@ -71,7 +71,7 @@ async function handleLogin(data: any) {
 }
 
 // 处理注册
-async function handleRegister(data: any) {
+async function handleRegister(data: { contact: string; type: string }) {
   const { contact, type } = data;
 
   // 验证输入
