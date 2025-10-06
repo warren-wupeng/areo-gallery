@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
 }
 
 // 请求密码重置
-async function handlePasswordResetRequest(data: { contact: string }) {
+    async function handlePasswordResetRequest(data: { contact: string }) {
   const { contact } = data;
 
   // 验证输入
